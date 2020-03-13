@@ -5,14 +5,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from math import sin, log
 from .locators import BasePageLocators
+from .locators import BasketPageLocators
+import time
 
 
-class BasePage():
+class BasePage:
 
 	def __init__(self, browser, url, timeout=10):
 		self.browser = browser
 		self.url = url
-		#self.browser.implicitly_wait(timeout)
+		self.browser.implicitly_wait(timeout)
 
 	def open(self):
 		self.browser.get(self.url)
@@ -61,3 +63,8 @@ class BasePage():
 
 	def should_be_login_link(self):
 		assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+	def go_to_basket_page(self):
+		cart_link = self.browser.find_element(*BasketPageLocators.BASKET_LINK)
+		cart_link.click()
+
