@@ -1,11 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators():
+class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
 
 
-class LoginPageLocators():
+class LoginPageLocators:
     LOGIN_AND_REGISTRATION_FORM_URL = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     # for check an already registred user
     CURRENT_EMAIL_ADDRESS = (By.ID, "id_login-username")
@@ -18,7 +18,7 @@ class LoginPageLocators():
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, "button[name='registration_submit']")
 
 
-class ProductPageLocators():
+class ProductPageLocators:
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button.btn-add-to-basket")
     ADD_PRODUCT_TITLE = (By.CSS_SELECTOR, "div.alertinner strong")
     PRODUCT_TITLE = (By.CSS_SELECTOR, 'h1')
@@ -27,6 +27,17 @@ class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alertinner")
 
 
-class BasePageLocators():
+class BasePageLocators:
     LOGIN_LINK = (By.ID, "login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
+class LinksLocators:
+    MAIN_PAGE = "http://selenium1py.pythonanywhere.com/"
+
+
+class BasketPageLocators:
+    BASKET_LINK = (By.CSS_SELECTOR, 'a[class="btn btn-default"]')
+    BASKET_CONTAIN = (By.CSS_SELECTOR, 'div[id="content_inner"] p')
+    EMPTY_BASKET_MSG = 'Your basket is empty.'
+    ITEMS_TO_BY_NOW = (By.CSS_SELECTOR, 'row[class="row"] h2')
