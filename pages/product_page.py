@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-
+import time
 
 class ProductPage(BasePage):
 
@@ -16,4 +16,4 @@ class ProductPage(BasePage):
 
 		assert added_product == product_name, f'different between product:"{product_name}" and "{added_product}"'
 		assert total_price == product_price, f'different between prices "{total_price} and {product_price}"'
-
+		#time.sleep(2)
